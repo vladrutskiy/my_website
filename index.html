@@ -14,6 +14,11 @@
         <script src="./typed.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         <script> (function(){ emailjs.init("U62dbmqo5insWsPT2"); })();</script>
+        <!-- Load the reCAPTCHA API -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+        <!-- Add reCAPTCHA widget to the form 
+        <div class="g-recaptcha" data-sitekey="6Le8RE4qAAAAACv_wBMWg3aBWHBeFl7RHFoLdC92"></div>-->
           <!-- Gogole analytics -->
           <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-G9HSXLYFL4"></script>
@@ -1437,6 +1442,10 @@
                     <i class="fa fa-stop"></i>
                 </button>
               
+                <!-- reCAPTCHA widget -->
+               <div class="g-recaptcha" data-sitekey="6Le8RE4qAAAAACv_wBMWg3aBWHBeFl7RHFoLdC92"></div>
+               <span id="recaptchaError" style="color: red; display: none;">Please complete the reCAPTCHA.</span>
+
                  
                <button class="w3-button w3-light-grey w3-round-large w3-right w3-section" type="submit">
                <i class="fa fa-paper-plane"></i> Send Message
@@ -1456,6 +1465,21 @@
                </form>
 
              <script>
+                document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+             // Get reCAPTCHA response
+            var recaptchaResponse = grecaptcha.getResponse();
+
+            if (!recaptchaResponse) {
+            // Show error if reCAPTCHA is not completed
+            document.getElementById('recaptchaError').style.display = 'block';
+            return; // Stop submission
+            } else {
+             // Hide error if reCAPTCHA is valid
+              document.getElementById('recaptchaError').style.display = 'none';
+               }
+
                        // Email validation function using regex
                       function validateEmail(email) {
                     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

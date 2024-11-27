@@ -1316,7 +1316,7 @@
                 </a>
                 <a href="mailto:v.rutskiy@icloud.com">
                     <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email:
-                    v.rutskiyaticloud.com<br>
+                    v.rutskiy@icloud.com<br>
                 </a>
                     <script>
                         var i = 0;
@@ -1430,10 +1430,10 @@
                 </script>
                 <span class="error-message" id="messageError">Message is required.</span>
 
-                <button class="w3-button w3-light-grey w3-round-large w3-left w3-section w3-margin-right-small" onclick="startConverting()">
+                <button class="w3-button w3-light-grey w3-round-large w3-left w3-section w3-margin-right-small" onclick="event.preventDefault();startConverting()">
                     <i class="fa fa-microphone"></i>
                 </button>
-                <button class="w3-button w3-light-grey w3-round-large w3-left w3-section" onclick="stopConverting()">
+                <button class="w3-button w3-light-grey w3-round-large w3-left w3-section" onclick="event.preventDefault();stopConverting()">
                     <i class="fa fa-stop"></i>
                 </button>
               

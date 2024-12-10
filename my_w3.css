@@ -229,7 +229,7 @@ html {
 }
 
 h1 {
-  font-size: 36px
+  font-size: 100px
 }
 
 h2 {
@@ -1383,6 +1383,11 @@ a {
   text-align: center !important
 }
 
+.w3-center-down-shifted {
+  text-align: bottom;
+  
+}
+
 .w3-left-shifted {
   text-align: center;
   /* position: relative;
@@ -1454,6 +1459,10 @@ a {
 
 .w3-margin-top {
   margin-top: 16px !important
+}
+
+.w3-margin-top-big {
+  margin-top: 10% !important
 }
 
 .w3-margin-bottom {

@@ -1082,23 +1082,23 @@
       
 
         <div class="w3-col m3 slide hidden" data-slide="left">
-            <img src="./images/cropped/Cyber security Anti virus Nov 11 2024 r.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                alt="Cyber security Anti virus">
+            <img src="./images/cropped/From Tester to QA Lead Game Testing, Jira and QA Mastery Dec 4 r.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="From Tester to QA Lead Game Testing, Jira and QA Mastery">
         </div>
 
         <div class="w3-col m3 slide hidden" data-slide="bottom">
-            <img src="./images/cropped/Web enumeration Nov 11 2024 r.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                alt="Ethical Hacking: Web enumeration">
+            <img src="./images/cropped/DevOps Tools for Beginners Vagrant Dec 02 r.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="DevOps Tools for Beginners Vagrant">
         </div>
 
         <div class="w3-col m3 slide hidden" data-slide="bottom">
-            <img src="./images/cropped/Android Malware Analysis Nov 10 2024 r.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                alt="Android Malware Analysis">
+            <img src="./images/cropped/Malware Analysis Dec 02 r.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="Malware Analysis">
         </div>
 
         <div class="w3-col m3 slide hidden" data-slide="right">
-            <img src="./images/cropped/Docker Basics Unleashed Nov 10 2024 r.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                alt="Docker Basics Unleashed">
+            <img src="./images/cropped/Make a WordPress website with Elementor Nov 23 r.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="Make a WordPress website with Elementor">
         </div>
 
        
@@ -1107,6 +1107,36 @@
     <span id="dots1"> </span>
     <span id="more1" style="display: none;">
         <div class="w3-row-padding w3-center w3-section">
+
+          <div class="w3-col m3 ">
+            <img src="./images/cropped/Ethical Hacking Web Hacking Intro Nov 23 r.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="Ethical Hacking Web Hacking Intro">
+        </div>
+
+          <div class="w3-col m3 ">
+            <img src="./images/cropped/Securing your Digital Life Nov 23 r.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="Securing your Digital Life">
+        </div>
+
+          <div class="w3-col m3 ">
+            <img src="./images/cropped/Cyber security Anti virus Nov 11 2024 r.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="Cyber security Anti virus">
+        </div>
+
+          <div class="w3-col m3 ">
+            <img src="./images/cropped/Web enumeration Nov 11 2024 r.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="Ethical Hacking: Web enumeration">
+        </div>
+
+          <div class="w3-col m3 ">
+            <img src="./images/cropped/Android Malware Analysis Nov 10 2024 r.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="Android Malware Analysis">
+        </div>
+
+          <div class="w3-col m3 ">
+            <img src="./images/cropped/Docker Basics Unleashed Nov 10 2024 r.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
+                alt="Docker Basics Unleashed">
+        </div>
 
           <div class="w3-col m3 ">
             <img src="./images/cropped/Cyber Security Awareness for Remote Workers Nov 10 2024 r.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
@@ -1464,6 +1494,40 @@
                </form>
 
              <script>
+
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Get reCAPTCHA token
+    const recaptchaResponse = grecaptcha.getResponse();
+
+    if (!recaptchaResponse) {
+        alert('Please complete the reCAPTCHA challenge.');
+        return;
+    }
+
+    // Prepare form data
+    const formData = new FormData(event.target);
+    formData.append('recaptcha_response', recaptchaResponse);
+
+    // Send data to the server
+    fetch('/submit-form', {
+        method: 'POST',
+        body: formData,
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Form submitted successfully!');
+            } else {
+                alert('reCAPTCHA validation failed. Please try again.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+});
+
               
                        // Email validation function using regex
                       function validateEmail(email) {
